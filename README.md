@@ -55,6 +55,7 @@ dotnet test
 
 - [x] Lucian's Luscious Lasagna
 - [x] Annalyn's Infiltration
+- [x] LogLevels
 - [ ] More exercises to come...
 
 ## Contributing
