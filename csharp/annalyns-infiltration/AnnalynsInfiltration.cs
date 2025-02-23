@@ -43,6 +43,7 @@ static class QuestLogic
         {
             return true;
         }
+
         else { return false; }
     }
 }
