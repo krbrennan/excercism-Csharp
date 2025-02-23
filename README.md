@@ -26,7 +26,7 @@ To follow along or run the exercises on your local machine, you'll need to have 
 Clone this repository to your local machine using the following command:
 
 ```git 
-git clone https://github.com/your-username/your-repo-name.git
+https://github.com/krbrennan/excercism-Csharp.git
 ```
 
 ### Running the Exercises
