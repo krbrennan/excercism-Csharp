@@ -9,43 +9,54 @@ public static class SumOfMultiples
     //Remove any duplicates.
     //Calculate the sum of all the numbers that are left.
 
-    //public static List<int> allVals = new List<int>();
-
-
-    // Next, figure out how to use LINQ to do this same jawn.
-    // Exercism is really quite terrible at giving you something to read or learn before having you do exercises. just a paragraph or two about how LINQ can be used in an instance like this would have done wonders...I maybe would have been able to properly approach this task if they had spent any effort helping guide me to relevant docs. I march on in spite of exercism.
-
     public static int Sum(IEnumerable<int> multiples, int max)
     {
-        // store all multiples here, then at the end return a HashSet
-        List<int> allNums = new List<int>();
+        //List<int> allVals = new List<int>();
 
-        foreach (var item in multiples)
-        {
-            for (var i = item; i < max; i += item)
-            {
-                if(i == 0)
-                {
-                    break;
-                } else
-                {
-                    allNums.Add(i);
-                }
-                    //yield return i;
-                    //yield return allNums.Add(i);
-                    
-            }
-
-        }
-        HashSet<int> setOfNums = new HashSet<int>(allNums);
-
-        // return the sum of allNums
-        int sum = setOfNums.Sum();
-        return sum;
-        //yield return sum;
-
+        return multiples
+            .SelectMany(num => Enumerable.Range(1, (max - 1) / num).Select(x => x * num))
+            .Distinct()
+            .Sum();
     }
 
 
-   
+    // Next, figure out how to use LINQ to do this same jawn.
+
+    //public static int Sum(IEnumerable<int> multiples, int max)
+    //{
+    //    // store all multiples here, then at the end return a HashSet
+    //    List<int> allNums = new List<int>();
+
+    //    foreach (var item in multiples)
+    //    {
+    //        for (var i = item; i < max; i += item)
+    //        {
+    //            if (i == 0)
+    //            {
+    //                break;
+    //            }
+    //            else
+    //            {
+    //                allNums.Add(i);
+    //            }
+    //            //yield return i;
+    //            //yield return allNums.Add(i);
+
+    //        }
+
+    //    }
+    //    HashSet<int> setOfNums = new HashSet<int>(allNums);
+
+    //    // return the sum of allNums
+    //    int sum = setOfNums.Sum();
+    //    return sum;
+    //    //yield return sum;
+
+    //}
+
+
+
+
+
+
 }
