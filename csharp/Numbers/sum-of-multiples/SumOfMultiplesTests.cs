@@ -78,7 +78,7 @@ public class SumOfMultiplesTests
         Assert.Equal(0, SumOfMultiples.Sum([], 10000));
     }
 
-    [Fact]
+    [Fact   ]
     public void The_only_multiple_of_0_is_0()
     {
         Assert.Equal(0, SumOfMultiples.Sum([0], 1));
