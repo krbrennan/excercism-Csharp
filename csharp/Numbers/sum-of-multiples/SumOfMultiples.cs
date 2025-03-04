@@ -14,6 +14,7 @@ public static class SumOfMultiples
         //List<int> allVals = new List<int>();
 
         return multiples
+            .Where(num => num != 0)
             .SelectMany(num => Enumerable.Range(1, (max - 1) / num).Select(x => x * num))
             .Distinct()
             .Sum();
