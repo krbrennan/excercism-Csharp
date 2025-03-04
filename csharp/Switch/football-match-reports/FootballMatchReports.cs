@@ -18,7 +18,6 @@ public static class PlayAnalyzer
         {
             case 1:
                 return "goalie";
-                break;
             case 2:
                 return "left back";
             case int i when i == 3 || i == 4:
@@ -45,13 +44,10 @@ public static class PlayAnalyzer
         {
             case int i:
                 return $"There are {i} supporters at the match.";
-                break;
             case string s:
                 return s;
-                break;
             case Foul f:
                 return f.GetDescription();
-                break;
             case Injury j:
                 return $"Oh no! {j.GetDescription()} Medics are on the field.";
             case Incident inc:
@@ -67,7 +63,6 @@ public static class PlayAnalyzer
                 }
                     default:
                 return "";
-                break;
         }
     }
 }
