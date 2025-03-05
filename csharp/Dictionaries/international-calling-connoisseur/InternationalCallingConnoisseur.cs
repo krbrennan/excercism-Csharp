@@ -25,8 +25,9 @@ public static class DialingCodes
     public static Dictionary<int, string> AddCountryToExistingDictionary(
         Dictionary<int, string> existingDictionary, int countryCode, string countryName)
     {
-        var tempEmptyDict = GetExistingDictionary();
-        tempEmptyDict.Add(countryCode, countryName);
+        //var tempEmptyDict = GetExistingDictionary();
+        //tempEmptyDict.Add(countryCode, countryName);
+        existingDictionary[countryCode] = countryName;
         return tempEmptyDict;
     }
 
@@ -52,17 +53,20 @@ public static class DialingCodes
         {
             return existingDictionary;
         }
-        var tempEmptyDict = GetExistingDictionary();
-        tempEmptyDict[countryCode] = countryName;
+        //var tempEmptyDict = GetExistingDictionary();
+        //tempEmptyDict[countryCode] = countryName;
+        existingDictionary[countryCode] = countryName;
         return tempEmptyDict;
     }
 
     public static Dictionary<int, string> RemoveCountryFromDictionary(
         Dictionary<int, string> existingDictionary, int countryCode)
     {
-        var tempEmptyDict = GetExistingDictionary();
-        tempEmptyDict.Remove(countryCode);
+        //var tempEmptyDict = GetExistingDictionary();
+        //tempEmptyDict.Remove(countryCode);
+        existingDictionary.Remove(countryCode);
         return tempEmptyDict;
+
     }
 
     public static string FindLongestCountryName(Dictionary<int, string> existingDictionary)

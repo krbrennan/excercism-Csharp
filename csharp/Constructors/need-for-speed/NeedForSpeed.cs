@@ -13,8 +13,8 @@ class RemoteControlCar
 
     public RemoteControlCar(int speed, int batteryDrain)
     {
-        this.speed = speed;
-        this.batteryDrain = batteryDrain;
+        this.speed = speed; // 'this.speed' refers to the class field, 'speed' refers to the constructor parameter
+        this.batteryDrain = batteryDrain; // 'this.batteryDrain' refers to the class field, 'batteryDrain' refers to the constructor parameter
     }
 
     public bool BatteryDrained()
