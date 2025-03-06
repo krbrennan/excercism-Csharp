@@ -8,6 +8,7 @@ public enum Allergen
     Chocolate = 32,
     Pollen = 64,
     Cats = 128
+
 }
 
 public class Allergies
