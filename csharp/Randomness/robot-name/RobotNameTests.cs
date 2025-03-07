@@ -50,7 +50,7 @@ public class RobotNameTests
         }
     }
     
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Robot_names_should_generate_edge_case_a()
     {
         const int robotsCount = 10_000;
@@ -58,7 +58,7 @@ public class RobotNameTests
         Assert.Contains(robots, robot => robot.Name.Contains('A'));
     }
     
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Robot_names_should_generate_edge_case_z()
     {
         const int robotsCount = 10_000;

@@ -1,8 +1,8 @@
 public class Robot
 {
 
-    char[] alphabet = Enumerable.Range('A', 26).Select(i => (char)i).ToArray();
-    //int[] numbers = Enumerable.Range(0, 10).ToArray();
+
+    public static readonly HashSet<string> AllRobots = new HashSet<string>(); 
 
     private string _name = "";
 
@@ -10,28 +10,28 @@ public class Robot
     {
         get
         {
-            if(_name.Length < 1)
-            {
-                // AA123
-                string Name = "";
-                // pick a random number between 100 and 999
-                int num = new Random().Next(100, 999);
-                do
-                {
-                    Name += alphabet[new Random().Next(0, 26)];
-                } while (Name.Length < 2);
-
-                Name += num.ToString();
-                _name = Name;
-                return Name;
-            }
+            if(_name == "") { Reset(); }
             return _name;
-            
+
         }
     }
 
+
+
     public void Reset()
     {
-        _name = "";
+        char[] alphabet = Enumerable.Range('A', 26).Select(i => (char)i).ToArray();
+        string TempName = "";
+        int num = new Random().Next(100, 999);
+        TempName += alphabet[new Random().Next(0, 26)];
+        TempName += alphabet[new Random().Next(0, 26)];
+        TempName += num.ToString();
+        if(!AllRobots.Add(TempName)) {
+            Reset(); 
+        } else
+        {
+            _name = TempName;
+            AllRobots.Add(TempName);
+        }
     }
 }
