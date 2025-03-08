@@ -44,11 +44,7 @@ public static class Bob
     {
         string trimmed = statement.Trim();
         var letters = trimmed.Where(char.IsLetter);
-        if (trimmed.Any(char.IsLetter))
-        {
-            return trimmed[trimmed.Length - 1] == '?' && letters.Any();
-        }
-        else return true;
+        return trimmed[trimmed.Length - 1] == '?';
     }
 
     public static bool IsUppercase(char[] statement)
