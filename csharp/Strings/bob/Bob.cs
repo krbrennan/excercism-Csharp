@@ -1,3 +1,4 @@
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
 
 public static class Bob
@@ -42,13 +43,18 @@ public static class Bob
     public static bool IsQuestion(string statement)
     {
         string trimmed = statement.Trim();
-        return trimmed[trimmed.Length - 1] == '?';
+        var letters = trimmed.Where(char.IsLetter);
+        if (trimmed.Any(char.IsLetter))
+        {
+            return trimmed[trimmed.Length - 1] == '?' && letters.Any();
+        }
+        else return true;
     }
 
     public static bool IsUppercase(char[] statement)
     {
-        //return statement.All(char.IsUpper);
-        return statement.Where(char.IsLetter).All(char.IsUpper);
+        var letters = statement.Where(char.IsLetter);
+        return letters.Any() && letters.All(char.IsUpper);
     }
 
     public static bool Silence(string statement)
