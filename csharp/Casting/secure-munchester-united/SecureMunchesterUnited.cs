@@ -2,7 +2,20 @@ public class SecurityPassMaker
 {
     public string GetDisplayName(TeamSupport support)
     {
-
+        if (support is Staff StaffMember)
+        {
+            if(support is Security security)
+            {
+                if(support is SecurityJunior or SecurityIntern or PoliceLiaison)
+                {
+                    return support.Title;
+                }
+                return "Security Team Member Priority Personnel";
+            }
+            return StaffMember.Title;
+        }
+        // manager
+        return "Too Important for a Security Pass";
     }
 }
 
