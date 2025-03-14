@@ -4,7 +4,15 @@ public static class BinarySearch
     private static int midpointIndex;
     public static int Find(int[] input, int value)
     {
-        midpointIndex = input.Length / 2;
+        if(input.Length == 1)
+        {
+            return midpointIndex;
+        } else if(input.Length == 0)
+        {
+            return -1;
+        }
+
+            midpointIndex = input.Length / 2;
 
         if (input[midpointIndex] == value)
         {
@@ -14,8 +22,14 @@ public static class BinarySearch
             ArraySegment<int> segment = new ArraySegment<int>(input, 0, midpointIndex);
 
             Find(segment.ToArray(), value);
+        } else
+        {
+            int maxLength = input.Length;
+            ArraySegment<int> segment = new ArraySegment<int>(input, midpointIndex, maxLength - midpointIndex);
+
+            Find(segment.ToArray(), value);
         }
 
-        return -1;
+            return -1;
     }
 }
