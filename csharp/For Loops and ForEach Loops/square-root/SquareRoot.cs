@@ -10,8 +10,7 @@ public static class SquareRoot
         {
             if(i * i == number)
             {
-                solution = i;
-                return solution;
+                return solution = i;
             } else
             {
                 continue;
