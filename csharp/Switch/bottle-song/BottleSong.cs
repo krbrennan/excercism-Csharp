@@ -51,12 +51,12 @@ public static class BottleSong
 
             if(takeDown > 1 && i < takeDown)
             {
-                int TempnextBottleText = bottles - 1;
-                int TempnextNextBottle = bottles - 2;
+                int TempnextBottleText = bottles - 2;
+                int TempnextNextBottle = bottles - 3;
                 string tempBottleText = ((Bottles)TempnextBottleText).ToString();
                 string tempNextBottle = ((Bottles)TempnextNextBottle).ToString().ToLower();
                 solution.Add("");
-                verse = new List<string>
+                var verse = new List<string>
                     {
                     $"{tempBottleText} green bottles hanging on the wall,",
                         $"{tempBottleText} green bottles hanging on the wall,",
